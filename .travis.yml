@@ -1,0 +1,36 @@
+language: node_js
+node_js:
+- '0.10'
+
+
+addons:
+  code_climate:
+    repo_token:
+      secure: Mb1N8KTORAuBI+PKYFOv03PIvQHofcZLU5xwvyKjTT4hYysVXrvCgVEHLPHHM/RnTHNIN/lc2wU01N6vbscqAldWK2XbIovsLkT+Z6ox/hFFf5GmBQRXhcdfD2WimngPDHB04TvdfsfvsctFOko01pL5sd4UswhfLp/zfiXgVSw=
+
+
+before_install:
+  - npm install -g npm
+  - npm install -g codeclimate-test-reporter
+
+install:
+  - npm install
+
+script:
+  - npm run test
+
+after_success:
+  - npm run cover-lcov
+  - codeclimate < ./coverage/lcov.info
+
+
+deploy:
+  provider: npm
+  email: aymeric@beaumet.me
+  api_key:
+    secure: Q16nqrG4nlUfLzrr8E7NBrux0wXvVLiJxXfOhTXzAfLX8iu0MmfCKbPh2a+uph9BqCXQEbCbxMZHcejnfOypUDLf07eEBcM401Y0NhW4RefMtffE63MGn/IBvNeU+DH3fjwmthQN439x+ev3NKOd1SvEMuAcbXaMVLhLsuuSNo0=
+  on:
+    repo: agitojs/agito-http-redirection
+    #on: master
+    all_branches: true # Travis issue, should not be necessary
+    tags: true
