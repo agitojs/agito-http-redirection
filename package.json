@@ -1,0 +1,25 @@
+{
+  "name": "agito-http-redirection",
+  "version": "0.0.0",
+  "description": "An Agito plugin to perform HTTP redirections",
+  "scripts": {
+    "test": "make lint test",
+    "cover": "make cover",
+    "cover-lcov": "make cover-lcov"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/agitojs/agito-http-redirection"
+  },
+  "keywords": [
+    "agito",
+    "plugin",
+    "action"
+  ],
+  "author": "Aymeric Beaumet <aymeric@beaumet.me> (http://beaumet.me/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/agitojs/agito-http-redirection/issues"
+  },
+  "homepage": "https://github.com/agitojs/agito-http-redirection"
+}
