@@ -2,6 +2,4 @@
 
 describe('AgitoHttpRedirection', function() {
 
-  var agitoHttpRedirection = require('../..');
-
 });
